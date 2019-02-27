@@ -9,7 +9,7 @@ const routeMethods = {
                     owner: payload.owner,
                     name: payload.name,
                     address: payload.address,
-                    imgURL: payload.imgURL
+                    imageURL: payload.imgURL
                 }).save()
                     .catch(err => console.log(err))
             })
