@@ -10,7 +10,8 @@ const bodyParams = requestBody => {
     return {
         owner: requestBody.owner,
         name: requestBody.name,
-        address: requestBody.address
+        address: requestBody.address,
+        imgURL: requestBody.imgURL
     };
 };
 const saveRoutes = app => {
@@ -20,9 +21,11 @@ const saveRoutes = app => {
         res.send("done");
     });
     // get search history
-    app.get("/api/show-search", (req, res) => {
-        console.log(req.body.owner);
+    app.post("/api/show-search", (req, res) => {
+        console.log("this is the body");
+        console.log(req.body);
         Route.find({ owner: req.body.owner }).then(dbResponse => {
+            console.log(dbResponse);
             res.send(dbResponse);
         }).catch(error => {
             console.log(error);

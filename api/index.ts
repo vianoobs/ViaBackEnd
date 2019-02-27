@@ -12,7 +12,6 @@ const keys = require('../Config/config');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 
-
 app.use(cors());
 //connecting to the db
 mongoose.connect(keys.mongoURI, {useNewUrlParser: true})
